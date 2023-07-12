@@ -5,23 +5,18 @@ Output: "fl"
 
 class Solution:
     def longestCommonPrefix(self, strs):
-        min_length=0
-        min_len=min(len(i) for i in strs)
-        for w in strs:
-            w = w[:min_len]
-            
-        if len[i] < len[i+1] :
-            max_length = len[i+1]
-        else:
-            max_length = len[i]
-            
-        for j in range(max_length):
-            if i[j] == strs[j][j]:
-                continue
-        return ''
-
-
+        min_len=0
+        if len(strs) == 0:
+            return ""
+        for w in strs: #단어 하나
+            min_len=min(len(w) for w in strs) #단어 중에 제일 짧은 단어의 길이
+            for i in range(min_len-1): #가장 짧은 단어의 길이만큼 돌건데,
+                for word in strs[1:]: #첫번째 단어를 제외한 나머지 단어들을 돌면서
+                    if (strs[0][i] != word[i] or i == min_len-1): #첫번째 단어의 i번째 글자와 나머지 단어들의 i번째 글자가 다르거나, i가 min_len-1이면
+                        return strs[0][:i] #루프를 멈추고, 첫번째 단어의 0번째부터 i-1번째까지를 리턴
+        
+        return ""          
+        
 s=Solution()
-
-print(s.longestCommonPrefix(["flower","flow","flight"]))
+print(s.longestCommonPrefix(["ab","a"]))
       
