@@ -19,4 +19,15 @@ class Solution:
         
 s=Solution()
 print(s.longestCommonPrefix(["ab","a"]))
-      
+
+#수정본
+class Solution:
+    def longestCommonPrefix(self, strs):
+        ans =""
+        min_len=min([len])
+        for i in range(min_len):
+            chars=[x[i] for x in strs]
+            if len(set(chars))==1:
+                ans += strs[0][i]
+            else:
+                break
