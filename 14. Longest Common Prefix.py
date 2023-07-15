@@ -2,7 +2,7 @@
 Input: strs = ["flower","flow","flight"]
 Output: "fl"
 '''
-
+#이건 너무 어려븜
 class Solution:
     def longestCommonPrefix(self, strs):
         min_len=0
@@ -16,6 +16,7 @@ class Solution:
                         return strs[0][:i] #루프를 멈추고, 첫번째 단어의 0번째부터 i-1번째까지를 리턴
         
         return ""          
+        
         
 s=Solution()
 print(s.longestCommonPrefix(["ab","a"]))
